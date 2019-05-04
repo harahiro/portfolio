@@ -35,6 +35,10 @@
         text-decoration: none;
     }
 
+    .scrollHidden {
+        overflow-y: hidden;
+    }
+
     /* splash ---------------------------------------------------- */
     #splash-wrap {
         z-index: 102;

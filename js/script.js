@@ -1,12 +1,17 @@
 $(function(){
 
     //スプラッシュのアニメーション
-    $('.cutting-line').delay(300).fadeIn(1200);
-    $('#splash-inner').delay(800).fadeIn(1200);
-    $('#splash-inner').delay(1700).fadeOut(300);
-    $('.cutting-line').delay(1700).fadeOut(300);
-    $('#splash-wrap').delay(3100).fadeOut(1200);
-
+    $.when(
+        $('body, html').addClass('scrollHidden'),
+        $('.cutting-line').delay(300).fadeIn(1200),
+        $('#splash-inner').delay(800).fadeIn(1200),
+        $('#splash-inner').delay(1700).fadeOut(300),
+        $('.cutting-line').delay(1700).fadeOut(300),
+        $('#splash-wrap').delay(3100).fadeOut(1200)
+    ).done(function(){
+        $('body, html').removeClass('scrollHidden')
+    });
+    
     //作品のカテゴリー（data-category）を判別して、カテゴリー名を表示する
     var $workItem = $('.js-workItem')
     for(var i = 0; i < $workItem.length; i++) {
@@ -156,8 +161,8 @@ $(function(){
         }
     });
 
-    //ページトップに戻るボタンの表示を制御
     if($(window).width()<671){
+        //ページトップに戻るボタンの表示を制御
         var $topBtn = $('.top-btn');
         $(window).scroll(function(){
             //ディスプレイモードかどうか
@@ -177,6 +182,7 @@ $(function(){
             $('body, html').animate({'scrollTop': 0}, '200ms');
         });
     }else{
+        //ページトップに戻るボタンの表示を制御
         scrollTopBtn($('.js-contentsWrap'));
     }
     
@@ -197,6 +203,7 @@ $(function(){
             $('#panel').slideToggle(200);
             $('.panel-btn-icon').toggleClass("close");
             $('body, html').animate({'scrollTop': 0}, '200ms');
+            $('body, html').removeClass('scrollHidden');
         }else if(pageNum == 1){
             //profile
             $('.js-mainGalleryContainer').removeClass('main-gallery-container-show');
@@ -210,6 +217,7 @@ $(function(){
             $('#panel').slideToggle(200);
             $('.panel-btn-icon').toggleClass("close");
             $('body, html').animate({'scrollTop': 0}, '200ms');
+            $('body, html').removeClass('scrollHidden');
         }else if(pageNum == 2){
             //article
             $('.js-mainGalleryContainer').removeClass('main-gallery-container-show');
@@ -223,6 +231,7 @@ $(function(){
             $('#panel').slideToggle(200);
             $('.panel-btn-icon').toggleClass("close");
             $('body, html').animate({'scrollTop': 0}, '200ms');
+            $('body, html').removeClass('scrollHidden');
         }
     });
     toggleNaviDisplay();
@@ -269,6 +278,12 @@ var toggleNaviDisplay = function(){
         var displayMode = $('.js-contentsWrap').hasClass('contents-wrap-display');
         if(displayMode){
             $('.panel-btn-icon').toggleClass('panel-btn-icon-display');
+        }
+        var naviMode = $('.navi-wrap').hasClass('active-navi-wrap');
+        if(naviMode){
+            $('body, html').addClass('scrollHidden');
+        }else{
+            $('body, html').removeClass('scrollHidden');
         }
         return false;
       });
