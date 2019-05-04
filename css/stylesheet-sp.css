@@ -39,6 +39,7 @@
         height: 100vh;
         background: url(../images/gallery/splash-0_sp.jpg);
         background-size: cover;
+        overflow-y: hidden;
     }
 
     .cutting-line {
