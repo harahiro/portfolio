@@ -50,7 +50,7 @@
         overflow-y: hidden;
         overflow-x: hidden;
     }
-    
+
     .cutting-line {
         display: none;
         opacity: 0.5;
@@ -263,13 +263,13 @@
 
     #nav-footer {
         position: absolute;
-        bottom: 60px;
+        bottom: 120px;
     }
 
     #update {
         position: absolute;
         bottom: 110px;
-        left: -28px;
+        left: -27px;
         font-size: 10px;
         color: rgba(50, 50, 55, 0.54);
         letter-spacing: 1.75px;
