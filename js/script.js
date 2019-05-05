@@ -148,6 +148,10 @@ $(function(){
             //選択されたItemが画面上部になるようスクロール
             var activeItemOffsetTop = selectedItem.offset().top + $('.js-contentsWrap').scrollTop();
             $('.js-contentsWrap').animate({'scrollTop': activeItemOffsetTop - 15}, '50ms');
+            //spのbody背景をdisplayモードのときに変更
+            if($(window).width()<671){
+                $('body').addClass('display-background');
+            }
         });
     });
 
@@ -158,6 +162,7 @@ $(function(){
         $('.panel-btn-icon').removeClass('panel-btn-icon-display');
         if($(window).width()<671){
             $('body, html').animate({'scrollTop': workItemOffset-32}, '200ms')
+            $('body').removeClass('display-background');
         }
     });
 
