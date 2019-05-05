@@ -517,24 +517,21 @@
         -ms-flex-pack:justify;
         justify-content:space-between;
         width: 100%;
-        height: 56px;
-        margin-top: 30px;
-        margin-bottom: 48px;
+        margin-top: 40px;
+        margin-bottom: 50px;
         padding: 0 32px;
     }
 
     .active-work-title {
+        margin-right: 12px;
         font-size: 24px;
-        line-height: 56px;
+        line-height: 36px;
         color: #fff;
     }
 
     .active-work-category {
-        position: absolute;
-        top: 0px;
-        right: 32px;
         font-size: 48px;
-        line-height: 56px;
+        line-height: 36px;
         font-weight: 100;
         opacity: 0.1;
         color: #fff;
@@ -549,7 +546,6 @@
         padding: 0 32px;
         line-height: 28px;
         font-size: 14px;
-        font-weight: 100;
         text-align: justify;
         color: #fff;
     }
