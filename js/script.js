@@ -62,6 +62,12 @@ $(function(){
                 workItemEvent.delay(delayTime).fadeIn(fadeTime);
                 workItemPhoto.delay(delayTime).fadeIn(fadeTime);
                 workItemOther.delay(delayTime).fadeIn(fadeTime);
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'link', 
+                    eventAction: 'click', 
+                    eventLabel: 'tabItem-all',
+                  })
                 break;
             case "web":
                 workItemApp.fadeOut(fadeTime);
@@ -70,6 +76,12 @@ $(function(){
                 workItemPhoto.fadeOut(fadeTime);
                 workItemOther.fadeOut(fadeTime);
                 workItemWeb.delay(delayTime).fadeIn(fadeTime);
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'link', 
+                    eventAction: 'click', 
+                    eventLabel: 'tabItem-web',
+                  })
                 break;
             case "app":
                 workItemWeb.fadeOut(fadeTime);
@@ -78,6 +90,12 @@ $(function(){
                 workItemPhoto.fadeOut(fadeTime);
                 workItemOther.fadeOut(fadeTime);
                 workItemApp.delay(delayTime).fadeIn(fadeTime);
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'link', 
+                    eventAction: 'click', 
+                    eventLabel: 'tabItem-app',
+                  })
                 break;
             case "printing":
                 workItemWeb.fadeOut(fadeTime);
@@ -86,6 +104,12 @@ $(function(){
                 workItemPhoto.fadeOut(fadeTime);
                 workItemOther.fadeOut(fadeTime);
                 workItemPrinting.delay(delayTime).fadeIn(fadeTime);
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'link', 
+                    eventAction: 'click', 
+                    eventLabel: 'tabItem-printing',
+                  })
                 break;
             case "event":
                 workItemWeb.fadeOut(fadeTime);
@@ -94,6 +118,12 @@ $(function(){
                 workItemPhoto.fadeOut(fadeTime);
                 workItemOther.fadeOut(fadeTime);
                 workItemEvent.delay(delayTime).fadeIn(fadeTime);
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'link', 
+                    eventAction: 'click', 
+                    eventLabel: 'tabItem-event',
+                  })
                 break;
             case "photo":
                 workItemWeb.fadeOut(fadeTime);
@@ -102,6 +132,12 @@ $(function(){
                 workItemEvent.fadeOut(fadeTime);
                 workItemOther.fadeOut(fadeTime);
                 workItemPhoto.delay(delayTime).fadeIn(fadeTime);
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'link', 
+                    eventAction: 'click', 
+                    eventLabel: 'tabItem-photo',
+                  })
                 break;
             case "other":
                 workItemWeb.fadeOut(fadeTime);
@@ -110,6 +146,12 @@ $(function(){
                 workItemEvent.fadeOut(fadeTime);
                 workItemPhoto.fadeOut(fadeTime);
                 workItemOther.delay(delayTime).fadeIn(fadeTime);
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'link', 
+                    eventAction: 'click', 
+                    eventLabel: 'tabItem-other',
+                  })
                 break;
         }
     });
@@ -152,6 +194,12 @@ $(function(){
             if($(window).width()<671){
                 $('body').addClass('display-background');
             }
+            ga('send', {
+                hitType: 'event',
+                eventCategory: 'link', 
+                eventAction: 'click', 
+                eventLabel: workTitle,
+              })
         });
     });
 
@@ -240,6 +288,17 @@ $(function(){
         }
     });
     toggleNaviDisplay();
+
+    //articleのイベントトラッキング
+    $('.article-item').click(function(){
+        var articleTitle = $(this).find('.article-title').text();
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'link', 
+            eventAction: 'click', 
+            eventLabel: articleTitle,
+          })
+    });
 });
 
 //一定以上スクロールすると表示され、クリックするとトップにスクロールするメソッド

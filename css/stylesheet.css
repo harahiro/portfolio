@@ -654,24 +654,12 @@
         transform: scale(1.1);
     }
 
-    .article-detail {
+    .article-title {
         margin-top: 16px;
         font-size: 14px;
         line-height: 24px;
         color: #323237;
     }
-
-    /* .article-detail::after{
-        display: inline-block;
-        position: relative;
-        top: 2px;
-        left: 4px;
-        width: 14px;
-        height: 14px;
-        content: "";
-        background: url(../images/ic/launch@2x.png);
-        background-size: contain;
-    } */
 
     .article-platform {
         margin-top: 12px;

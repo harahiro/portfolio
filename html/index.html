@@ -54,20 +54,20 @@
       </div>
     </div>
     <!-- SP用ハンバーガーメニュー -->
-    <div id="panel-btn"><span class="panel-btn-icon"></span></div>
+    <div id="panel-btn" onClick="ga('send', 'event', 'link', 'click', 'menu-sp');"><span class="panel-btn-icon"></span></div>
     <!-- navi -->
     <div class="navi-wrap">
-      <a href=""><img id="pf-logo" src="../images/ic/pf-logo.svg" alt="pf-logo"></a>
+      <a href=""><img id="pf-logo" src="../images/ic/pf-logo.svg" alt="pf-logo" onClick="ga('send', 'event', 'link', 'click', 'pf-logo');"></a>
       <nav>
         <ul class="nav-lst js-navLst">
-          <li class="nav-item js-navItem active">Gallery</li>
-          <li class="nav-item js-navItem">Profile</li>
-          <li class="nav-item js-navItem">Article</li>
+          <li class="nav-item js-navItem active" onClick="ga('send', 'event', 'link', 'click', 'navi-gallery');">Gallery</li>
+          <li class="nav-item js-navItem" onClick="ga('send', 'event', 'link', 'click', 'navi-profile');">Profile</li>
+          <li class="nav-item js-navItem" onClick="ga('send', 'event', 'link', 'click', 'navi-article');">Article</li>
         </ul>
       </nav>
       <div id="nav-footer">
         <p id="update">2019.05.08</p>
-        <a href="https://note.mu/harahiro" target="_blank">
+        <a href="https://note.mu/harahiro" target="_blank" onClick="ga('send', 'event', 'link', 'click', 'navi-note');">
           <svg class="note-logo-wrap" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
             <title>note-logo@2x</title>
@@ -82,7 +82,7 @@
             </g>
           </svg>
         </a>
-        <a href="https://twitter.com/harahiro_d" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://twitter.com/harahiro_d" target="_blank" onClick="ga('send', 'event', 'link', 'click', 'navi-twitter');"><i class="fab fa-twitter"></i></a>
       </div>
     </div>
     <!-- gallery -->
@@ -287,7 +287,7 @@
               <div class="article-image-wrap">
                 <img class="article-image" src="../images/article/article-2.png" alt="article-2">
               </div>
-              <p class="article-detail">決まらないのは決められないから【デザインプロセスの進め方】</p>
+              <p class="article-title">決まらないのは決められないから【デザインプロセスの進め方】</p>
               <img class="article-platform" src="../images/ic/note-type-logo.svg" alt="article-platform">
             </a>
           </li>
@@ -296,7 +296,7 @@
               <div class="article-image-wrap">
                 <img class="article-image" src="../images/article/article-1.png" alt="article-1">
               </div>
-              <p class="article-detail">UI検討のコツは俺自身がUIになる事だ</p>
+              <p class="article-title">UI検討のコツは俺自身がUIになる事だ</p>
               <img class="article-platform" src="../images/ic/note-type-logo.svg" alt="article-platform">
             </a>
           </li>
@@ -305,7 +305,7 @@
               <div class="article-image-wrap">
                 <img class="article-image" src="../images/article/article-0.png" alt="article-0">
               </div>
-              <p class="article-detail">組織の評価軸が不要な機能を生む話</p>
+              <p class="article-title">組織の評価軸が不要な機能を生む話</p>
               <img class="article-platform" src="../images/ic/note-type-logo.svg" alt="article-platform">
             </a>
           </li>
